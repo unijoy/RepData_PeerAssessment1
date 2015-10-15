@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -28,7 +33,7 @@ If you do not understand the difference between a histogram and a barplot, resea
 hist(perDayStep$x,breaks=10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 Calculate and report the mean and median of the total number of steps taken per day
 
@@ -63,7 +68,7 @@ time_series <- tapply(mdata$steps,mdata$interval,mean,na.rm=TRUE)
 plot(names(time_series),time_series,type="l",col = "red")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -116,7 +121,7 @@ hist(perDayStep$x,breaks=15,main = "with missing value")
 hist(perDayStep2$x,breaks=15,main = "fill missing value")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 ```r
 mean(perDayStep2$x,na.rm = TRUE)
@@ -159,4 +164,4 @@ levels(stepByFactor$weekend) <- c("weekday","weekend")
 xyplot(steps ~ interval | weekend, stepByFactor, type = "l", layout = c(1, 2), xlab = "Interval", ylab = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
